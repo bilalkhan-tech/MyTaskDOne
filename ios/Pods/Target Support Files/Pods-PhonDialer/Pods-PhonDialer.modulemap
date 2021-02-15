@@ -1,0 +1,6 @@
+module Pods_PhonDialer {
+  umbrella header "Pods-PhonDialer-umbrella.h"
+
+  export *
+  module * { export * }
+}

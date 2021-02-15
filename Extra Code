@@ -1,0 +1,143 @@
+ // const swipeoutBtns = [
+          //   {
+
+          //     backgroundColor: 'green',
+          //     text: 'Update',
+          //     onPress: () => { EditUserNum(item,index) }
+          //   },
+          //   {
+
+          //     type: 'delete',
+          //     text: 'Delete',
+          //     onPress: () => Alert.alert('Alert', 'Are you Sure you want to Delete ?', [
+          //       {
+          //         text: 'No',
+          //         onPress: () => { console.log('User cancel Action') r}
+          //       },
+          //       {
+          //         text: 'Yes',
+          //         onPress: () => { DeleteContactNum(item) }
+          //       },
+
+
+          //       { cancelable: false }
+          //     ])
+          //   }
+
+          // ]
+          ===========================================================
+
+
+          {/* <Modal isVisible={UpdatedNumModal}>
+        <View style={styles.cardView}>
+          <TextInput
+            style={styles.TextInputmodal}
+            keyboardType='number-pad'
+            value={UpdatedNum}
+            placeholder='Enter Conatct Number'
+            onChangeText={text => setUpdatedNum(text)}
+          />
+          <TouchableOpacity onPress={() => addContact1()} style={[styles.modalButton, { backgroundColor: '#1def77', }]}>
+            <Text style={styles.Buttontext}>ADD</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            updateUser(),
+            setUpdatedNumModal(false)
+          }} style={[styles.modalButton, { backgroundColor: '#2c80b9', }]}>
+            <Text style={styles.Buttontext}>Update</Text>
+          </TouchableOpacity>
+
+
+        </View>
+      </Modal> */}
+      ================================================================
+       // const deleteUser = () => {
+  //   console.log(UserId, ContactArray)
+  //   db.transaction((tx) => {
+  //     tx.executeSql(
+  //       'UPDATE MyContactBook set user_contact=?  where user_id=?',
+  //       [JSON.stringify(ContactArray), UserId],
+  //       (tx, results) => {
+  //         console.log('Results', results);
+  //         if (results.rowsAffected > 0) {
+  //           Toast.showWithGravity('Contact Updated Successfully', Toast.SHORT, Toast.BOTTOM)
+
+  //         } else alert('Updation Failed');
+  //       }
+  //     );
+  //   });
+  // };
+  =================================================================
+
+
+
+
+   // const DeleteContactNum = async (id) => {
+  //   let a = ContactArray.filter((i) => i != id)
+  //   console.log(a)
+  //   db.transaction((tx) => {
+  //     tx.executeSql(
+  //       'UPDATE MyContactBook set user_contact=?  where user_id=?',
+  //       [JSON.stringify(a), UserId],
+  //       (tx, results) => {
+  //         console.log('Results', results);
+  //         if (results.rowsAffected > 0) {
+  //           Toast.showWithGravity('Contact Deleted Successfully', Toast.SHORT, Toast.BOTTOM)
+  //           updateUser()
+
+  //         } else alert('Updation Failed');
+  //       }
+  //     );
+  //   });
+  // }
+  ================================================================
+  // EditUserNum = (num, index) => {
+
+  //   console.log(ContactArray, index)
+  //   setUpdatedNum(num)
+  //   setindex(index)
+  //   setUpdatedNumModal(true)
+
+  // }
+  
+  ===============================================================
+
+
+    const swipeoutBtns = [
+                        {
+                            backgroundColor: 'green',
+                            text: 'Edit',
+                            onPress:()=>{UpdateUser(item)}
+                          },
+                        {
+                            type:'delete',
+                          text: 'Delete',
+                          onPress:()=>Alert.alert('Alert','Are you Sure you want to Delete ?',[
+                            {
+                                text:'No',
+                                onPress:()=>{console.log('User cancel Action')}
+                            }, 
+                            {
+                                  text:'Yes',
+                                  onPress:()=>DeleteUserRef(item.user_id)
+                              },
+                             
+                    
+                              {cancelable:false}
+                          ])
+                        }
+                       
+                      ]
+===============================================================
+
+ <TouchableOpacity>
+                                <Feather
+                                     onPress={() => Linking.openURL(`tel:${item.user_contact}`)}
+                                    name="phone-forwarded" size={25} color={'#1def77'} />
+                            </TouchableOpacity>
+
+
+
+=============================================================
+ <Swipeout item={item} backgroundColor={Color.White} autoClose={true} right={swipeoutBtns}>
+  </Swipeout>                            
